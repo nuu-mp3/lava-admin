@@ -1,0 +1,1457 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local BAR = Instance.new("TextLabel")
+local TextLabel_Roundify_12px = Instance.new("ImageLabel")
+local Input_Close = Instance.new("TextButton")
+local Input_Close_Roundify_12px = Instance.new("ImageLabel")
+local Input_Minimise = Instance.new("TextButton")
+local Input_Close_Roundify_12px_2 = Instance.new("ImageLabel")
+local Main = Instance.new("ImageLabel")
+local InputArea = Instance.new("ScrollingFrame")
+local UIListLayout = Instance.new("UIListLayout")
+local Information = Instance.new("TextLabel")
+local InputCMD = Instance.new("TextBox")
+local CMD_DEC = Instance.new("TextLabel")
+local Title = Instance.new("TextLabel")
+
+--Properties:
+
+ScreenGui.Name = "( ? )"
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ResetOnSpawn = false
+
+BAR.Name = "[ BAR ]"
+BAR.Parent = ScreenGui
+BAR.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+BAR.BackgroundTransparency = 1.000
+BAR.BorderColor3 = Color3.fromRGB(26, 26, 26)
+BAR.BorderSizePixel = 0
+BAR.Position = UDim2.new(0.342044592, 0, 0.308353812, 0)
+BAR.Size = UDim2.new(0, 441, 0, 20)
+BAR.ZIndex = 3
+BAR.Font = Enum.Font.SourceSans
+BAR.Text = ""
+BAR.TextColor3 = Color3.fromRGB(0, 0, 0)
+BAR.TextSize = 14.000
+
+TextLabel_Roundify_12px.Name = "TextLabel_Roundify_12px"
+TextLabel_Roundify_12px.Parent = BAR
+TextLabel_Roundify_12px.AnchorPoint = Vector2.new(0.5, 0.5)
+TextLabel_Roundify_12px.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_Roundify_12px.BackgroundTransparency = 1.000
+TextLabel_Roundify_12px.Position = UDim2.new(0.498686701, 0, 0.5, 0)
+TextLabel_Roundify_12px.Size = UDim2.new(0.966345429, 0, 0.899999976, 0)
+TextLabel_Roundify_12px.ZIndex = 2
+TextLabel_Roundify_12px.Image = "rbxassetid://3570695787"
+TextLabel_Roundify_12px.ImageColor3 = Color3.fromRGB(26, 26, 26)
+TextLabel_Roundify_12px.ScaleType = Enum.ScaleType.Slice
+TextLabel_Roundify_12px.SliceCenter = Rect.new(100, 100, 100, 100)
+TextLabel_Roundify_12px.SliceScale = 0.120
+
+Input_Close.Name = "Input_Close"
+Input_Close.Parent = BAR
+Input_Close.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+Input_Close.BackgroundTransparency = 1.000
+Input_Close.BorderColor3 = Color3.fromRGB(20, 20, 20)
+Input_Close.BorderSizePixel = 0
+Input_Close.Position = UDim2.new(0.861678004, 0, 0.049999997, 0)
+Input_Close.Size = UDim2.new(0, 47, 0, 18)
+Input_Close.ZIndex = 5
+Input_Close.Font = Enum.Font.GothamBold
+Input_Close.Text = "X"
+Input_Close.TextColor3 = Color3.fromRGB(255, 255, 255)
+Input_Close.TextSize = 14.000
+Input_Close.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+
+Input_Close_Roundify_12px.Name = "Input_Close_Roundify_12px"
+Input_Close_Roundify_12px.Parent = Input_Close
+Input_Close_Roundify_12px.Active = true
+Input_Close_Roundify_12px.AnchorPoint = Vector2.new(0.5, 0.5)
+Input_Close_Roundify_12px.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Input_Close_Roundify_12px.BackgroundTransparency = 1.000
+Input_Close_Roundify_12px.Position = UDim2.new(0.5, 0, 0.5, 0)
+Input_Close_Roundify_12px.Selectable = true
+Input_Close_Roundify_12px.Size = UDim2.new(1, 0, 1, 0)
+Input_Close_Roundify_12px.ZIndex = 4
+Input_Close_Roundify_12px.Image = "rbxassetid://3570695787"
+Input_Close_Roundify_12px.ImageColor3 = Color3.fromRGB(20, 20, 20)
+Input_Close_Roundify_12px.ScaleType = Enum.ScaleType.Slice
+Input_Close_Roundify_12px.SliceCenter = Rect.new(100, 100, 100, 100)
+Input_Close_Roundify_12px.SliceScale = 0.120
+
+Input_Minimise.Name = "Input_Minimise"
+Input_Minimise.Parent = BAR
+Input_Minimise.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+Input_Minimise.BackgroundTransparency = 1.000
+Input_Minimise.BorderColor3 = Color3.fromRGB(20, 20, 20)
+Input_Minimise.BorderSizePixel = 0
+Input_Minimise.Position = UDim2.new(0.755102038, 0, 0.049999997, 0)
+Input_Minimise.Size = UDim2.new(0, 47, 0, 18)
+Input_Minimise.ZIndex = 5
+Input_Minimise.Font = Enum.Font.GothamBold
+Input_Minimise.Text = "-"
+Input_Minimise.TextColor3 = Color3.fromRGB(255, 255, 255)
+Input_Minimise.TextSize = 14.000
+Input_Minimise.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+
+Input_Close_Roundify_12px_2.Name = "Input_Close_Roundify_12px"
+Input_Close_Roundify_12px_2.Parent = Input_Minimise
+Input_Close_Roundify_12px_2.Active = true
+Input_Close_Roundify_12px_2.AnchorPoint = Vector2.new(0.5, 0.5)
+Input_Close_Roundify_12px_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Input_Close_Roundify_12px_2.BackgroundTransparency = 1.000
+Input_Close_Roundify_12px_2.Position = UDim2.new(0.5, 0, 0.5, 0)
+Input_Close_Roundify_12px_2.Selectable = true
+Input_Close_Roundify_12px_2.Size = UDim2.new(1, 0, 1, 0)
+Input_Close_Roundify_12px_2.ZIndex = 4
+Input_Close_Roundify_12px_2.Image = "rbxassetid://3570695787"
+Input_Close_Roundify_12px_2.ImageColor3 = Color3.fromRGB(20, 20, 20)
+Input_Close_Roundify_12px_2.ScaleType = Enum.ScaleType.Slice
+Input_Close_Roundify_12px_2.SliceCenter = Rect.new(100, 100, 100, 100)
+Input_Close_Roundify_12px_2.SliceScale = 0.120
+
+Main.Name = "Main"
+Main.Parent = BAR
+Main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Main.BackgroundTransparency = 1.000
+Main.Position = UDim2.new(-0.000359028578, 0, -0.191646188, 0)
+Main.Size = UDim2.new(0, 441, 0, 231)
+Main.Image = "rbxassetid://3570695787"
+Main.ImageColor3 = Color3.fromRGB(20, 20, 20)
+Main.ScaleType = Enum.ScaleType.Slice
+Main.SliceCenter = Rect.new(100, 100, 100, 100)
+Main.SliceScale = 0.120
+
+InputArea.Name = "InputArea"
+InputArea.Parent = Main
+InputArea.Active = true
+InputArea.BackgroundColor3 = Color3.fromRGB(39, 39, 39)
+InputArea.BorderSizePixel = 0
+InputArea.Position = UDim2.new(0.0158730149, 0, 0.121212125, 0)
+InputArea.Size = UDim2.new(0, 426, 0, 174)
+InputArea.BottomImage = ""
+InputArea.CanvasSize = UDim2.new(0, 0, 100, 0)
+InputArea.HorizontalScrollBarInset = Enum.ScrollBarInset.ScrollBar
+InputArea.ScrollBarThickness = 0
+
+UIListLayout.Parent = InputArea
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+
+Information.Name = "Information"
+Information.Parent = InputArea
+Information.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Information.BackgroundTransparency = 1.000
+Information.Size = UDim2.new(0, 426, 0, 15)
+Information.Font = Enum.Font.GothamBold
+Information.Text = "> Thank you for using not fate's admin :)"
+Information.TextColor3 = Color3.fromRGB(255, 255, 255)
+Information.TextSize = 9.000
+Information.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+Information.TextWrapped = true
+Information.TextXAlignment = Enum.TextXAlignment.Left
+
+InputCMD.Name = "InputCMD"
+InputCMD.Parent = Main
+InputCMD.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+InputCMD.BorderColor3 = Color3.fromRGB(26, 26, 26)
+InputCMD.Position = UDim2.new(0.0702947825, 0, 0.900432885, 0)
+InputCMD.Size = UDim2.new(0, 402, 0, 16)
+InputCMD.Font = Enum.Font.GothamBold
+InputCMD.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
+InputCMD.PlaceholderText = "Lava Admin"
+InputCMD.Text = ""
+InputCMD.TextColor3 = Color3.fromRGB(255, 255, 255)
+InputCMD.TextSize = 14.000
+InputCMD.TextXAlignment = Enum.TextXAlignment.Left
+
+CMD_DEC.Name = "CMD_DEC"
+CMD_DEC.Parent = Main
+CMD_DEC.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+CMD_DEC.BorderColor3 = Color3.fromRGB(26, 26, 26)
+CMD_DEC.Position = UDim2.new(0.0158730168, 0, 0.900432885, 0)
+CMD_DEC.Size = UDim2.new(0, 18, 0, 16)
+CMD_DEC.Font = Enum.Font.GothamBold
+CMD_DEC.Text = ">"
+CMD_DEC.TextColor3 = Color3.fromRGB(255, 255, 255)
+CMD_DEC.TextScaled = true
+CMD_DEC.TextSize = 14.000
+CMD_DEC.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+CMD_DEC.TextWrapped = true
+
+Title.Name = "Title"
+Title.Parent = BAR
+Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1.000
+Title.Position = UDim2.new(0.0453514755, 0, 0, 0)
+Title.Size = UDim2.new(0, 313, 0, 19)
+Title.ZIndex = 4
+Title.Font = Enum.Font.GothamBlack
+Title.Text = "lava admin - suurow"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextScaled = true
+Title.TextSize = 14.000
+Title.TextWrapped = true
+
+-- Scripts:
+
+local function CVAZ_fake_script() -- Input_Close.LocalScript
+local script = Instance.new('LocalScript', Input_Close)
+
+local Button = script.Parent
+local screengui = script.Parent.Parent.Parent
+Button.MouseButton1Down:Connect(function()
+screengui:Destroy()
+end)
+
+Button.MouseEnter:Connect(function()
+Button.TextColor3 = Color3.new(1, 0, 0)
+end)
+Button.MouseLeave:Connect(function()
+Button.TextColor3 = Color3.new(1, 1, 1)
+end)
+end
+coroutine.wrap(CVAZ_fake_script)()
+local function WBPDQU_fake_script() -- Input_Minimise.LocalScript
+local script = Instance.new('LocalScript', Input_Minimise)
+
+local Button = script.Parent
+local UI = script.Parent.Parent.Main
+
+Button.MouseButton1Down:Connect(function()
+if UI.Visible then
+UI.Visible = false
+Button.TextColor3 = Color3.new(0.333333, 0.666667, 1)
+wait(0.5)
+Button.TextColor3 = Color3.new(255, 255, 255)
+elseif UI.Visible == false then
+UI.Visible = true
+Button.TextColor3 = Color3.new(0.333333, 0.666667, 1)
+wait(0.5)
+Button.TextColor3 = Color3.new(255, 255, 255)
+end
+end)
+
+Button.MouseEnter:Connect(function()
+Button.TextColor3 = Color3.new(1, 0, 0)
+end)
+Button.MouseLeave:Connect(function()
+Button.TextColor3 = Color3.new(255, 255, 255)
+end)
+end
+coroutine.wrap(WBPDQU_fake_script)()
+local function QWXQH_fake_script() -- BAR.Drag
+local script = Instance.new('LocalScript', BAR)
+
+local UI = script.Parent
+
+UI.Draggable = true
+UI.Active = true
+end
+coroutine.wrap(QWXQH_fake_script)()
+local function ITLEDNX_fake_script() -- InputCMD.CMDHANDLER
+local script = Instance.new('LocalScript', InputCMD)
+
+--[[
+Frames Needed
+]]
+
+local Output = script.Parent.Parent.InputArea
+local CINput = script.Parent
+local Message = Output["Information"]
+
+--[[
+Network Ownership
+]]
+
+coroutine.wrap(function()
+repeat
+settings().Physics.AllowSleep = false
+setsimulationradius(1/0, 1/0);
+wait(1)
+until nil
+end)()
+
+local NetUsers = {}
+local NetUsed = false
+
+for I, V in pairs(game.Players:GetPlayers()) do
+local Stim = gethiddenproperty(V, "SimulationRadius")
+
+if V.Name ~= game.Players.LocalPlayer.Name then
+
+if Stim == 1/0 or Stim > 1000.000 then
+ NetUsed = true
+ table.insert(NetUsers, V.Name)
+end
+ end
+end
+
+
+if NetUsed then
+local Message = Instance.new("Message")
+Message.Text = "Detected Network Ownership, script may not work as planned. Check F9 for Net Users."
+wait(3)
+Message:Destroy()
+end
+
+warn(table.concat(NetUsers, ","))
+
+
+
+
+
+--[[
+Tables
+]]
+
+local ErrorType = {
+UnknownCommand = "Invalid command entered",
+UnclaimedPlayer = "This player is not claimed",
+CommandErrorRet = "This command returned an error, invalid user / invalid argument? - Copied to clipboard.",
+BlacklistedUser = "You have been kicked by an admin: "
+}
+local Commands = {}
+
+--[[
+Services Needed
+]]
+
+local InputService = game:GetService("UserInputService")
+local RunService = game:GetService("RunService")
+local HttpService = game:GetService("HttpService")
+
+--[[
+Extra Functions
+]]
+
+local ConsoleLog = function(Text, Type)
+local Col = nil
+if Type == "Error" then
+Col = Color3.fromRGB(255, 0, 0)
+else
+if Type == "Success" then
+Col = Color3.fromRGB(0, 255, 0)
+else
+if Type == nil or Type == "Classic" then
+Col = Color3.fromRGB(255, 255, 255)
+end
+end
+end
+local Information = Instance.new("TextLabel")
+Information.Name = "Information" .. #Output:GetChildren() + 1
+Information.Parent = Output
+Information.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Information.BackgroundTransparency = 1.000
+Information.Size = UDim2.new(0, 426, 0, 15)
+Information.Font = Enum.Font.GothamBold
+Information.Text = "> " .. Text
+Information.TextColor3 = Col
+Information.TextSize = 9.000
+Information.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+Information.TextWrapped = true
+Information.TextXAlignment = Enum.TextXAlignment.Left
+end
+
+local function GetPlayer(String)
+local Found = {}
+local strl = String:lower()
+if strl == "all" then
+for i,v in pairs(game:GetService("Players"):GetPlayers()) do
+return v
+end
+elseif strl == "others" then
+for i,v in pairs(game:GetService("Players"):GetPlayers()) do
+if v.Name ~= game.Players.Localayer.Name then
+return v
+end
+end  
+elseif strl == "me" then
+for i,v in pairs(game:GetService("Players"):GetPlayers()) do
+if v.Name == game.Players.LocalPlayer.Name then
+return v
+end
+end  
+else
+for i,v in pairs(game:GetService("Players"):GetPlayers()) do
+if v.Name:lower():sub(1, #String) == String:lower() then
+return v
+end
+end    
+end
+end
+
+local function CreateCommandFunction(CommandName, CommandFunction, Desc)
+
+if Desc ~= nil then
+DescS = Desc
+DescS = DescS:gsub("PA", "[ PLAYER ]")
+DescS = DescS:gsub("NUM", "[ NUMBER ]")
+DescS = DescS:gsub("N/A", "[ NONE ]")
+end
+
+
+
+Commands[#Commands + 1] = {
+['Name'] = CommandName .. " ",
+['Function'] = CommandFunction,
+['Descr'] = DescS
+}
+end
+
+local function FindCommandFunc(Name)
+for i = 1,#Commands do
+if Commands[i].Name:lower() == Name:lower() then
+return Commands[i].Function
+end
+end
+end
+
+local function C(Player)
+local C = Instance.new("BoolValue")
+C.Parent = Player.Character
+C.Name = "C"
+end
+
+local function IC(Player)
+if Player.Character then
+if Player.Character:FindFirstChild("C") then
+return true
+else
+return false
+end
+end
+end
+
+local function ClearConsole()
+local CloneInfo = Output.Information:Clone()
+CloneInfo.Text = "suurow was here <3"
+for Deleting, ThisShit in pairs(Output:GetChildren()) do
+if ThisShit:IsA("TextLabel") then
+ThisShit:Destroy()
+end
+end
+CloneInfo.Parent = Output
+
+end
+
+local function CL(Player)
+
+C(Player)
+CINput.Text = ""
+
+local plr = game:GetService("Players").LocalPlayer
+local char = plr.Character
+local oldpos = char:WaitForChild("HumanoidRootPart").CFrame
+local plr = game.Players.LocalPlayer;
+local chr = plr.Character;
+local hum = chr.Humanoid;
+local hastool = false;
+
+workspace.FallenPartsDestroyHeight = 0/1/0
+
+for i,v in pairs(plr.Backpack:GetChildren()) do
+if v:IsA("Tool") then
+hastool = true
+v.Parent = char
+end
+end
+
+if not hastool and _G.CL then
+return ConsoleLog("No tool found!", "Error")
+end
+
+char:WaitForChild("Humanoid"):Remove()
+Instance.new("Humanoid", char)
+char:WaitForChild("Head"):Destroy()
+spawn(function()
+
+while game:GetService("RunService").Heartbeat:wait(0.000000e+9) do
+char:WaitForChild("HumanoidRootPart").CFrame = Player.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(-1,0,1)
+end
+end)
+
+for a,b in pairs(char:GetChildren()) do
+if b:IsA("Tool") then
+b.Parent = plr.Backpack
+end
+end
+
+for _,x in pairs(plr.Backpack:GetChildren()) do
+if x:IsA("Tool") then
+x.Parent = char
+end
+end
+
+for i = 1,10 do
+wait(0.000000e+9)
+char:WaitForChild("HumanoidRootPart").CFrame = CFrame.new(0,-99999999,0)
+end
+
+for i = 1,10 do
+wait()
+char:WaitForChild("HumanoidRootPart").CFrame = oldpos
+end
+
+char:WaitForChild("HumanoidRootPart"):Destroy()
+char:WaitForChild("Torso"):Destroy()
+char:WaitForChild("Right Arm"):Destroy()
+char:WaitForChild("Left Arm"):Destroy()
+char:WaitForChild("Right Leg"):Destroy()
+char:WaitForChild("Left Leg"):Destroy()
+for i = 1,10 do
+wait()
+char:WaitForChild("HumanoidRootPart").CFrame = oldpos
+end
+end
+
+local function NoclipCurrent()
+for i, v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+if v:IsA("BasePart") then
+v.CanCollide = false
+end
+end
+end
+
+local function Send(T, TE, D)
+game:GetService("StarterGui"):SetCore("SendNotification",{
+Title = T,
+Text = TE,
+Duration = D,
+})
+end
+
+local function rape(plr)
+local function abuseplr()
+local target = plr.Name
+coroutine.wrap(function()
+local lp = game.Players.LocalPlayer
+repeat
+game.Players[target].Character.HumanoidRootPart.CFrame = lp.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, -1)
+wait(0.1)
+game.Players[target].Character.HumanoidRootPart.CFrame = lp.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, -1.5)
+wait(0.1)
+game.Players[target].Character.HumanoidRootPart.CFrame = lp.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, -2)
+wait(0.1)
+game.Players[target].Character.HumanoidRootPart.CFrame = lp.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, -2.5)
+wait(0.1)
+game.Players[target].Character.HumanoidRootPart.CFrame = lp.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, -2)
+wait(0.1)
+game.Players[target].Character.HumanoidRootPart.CFrame = lp.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, -1.5)
+wait(0.1)
+game.Players[target].Character.HumanoidRootPart.CFrame = lp.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, -1)
+wait()
+until game.Players[plr.Name].Character.Humanoid.Health == 0 or game.Players[plr.Name] == nil or game.Players.LocalPlayer.Character.Humanoid.Health == 0 or game.Players.LocalPlayer.Character == nil
+end)()
+end
+local function abuseanims()
+local player = game:GetService("Players").LocalPlayer
+local character = player.Character
+local item = character["Right Arm"]
+item:BreakJoints()
+local alignOr = Instance.new("AlignOrientation", character["Head"])
+local alignPosition = Instance.new("AlignPosition", character["Head"])
+local rightarm = Instance.new("Attachment", item)
+local a1 = Instance.new("Attachment", character["Torso"])
+alignPosition.Attachment0 = rightarm
+alignPosition.Attachment1 = a1
+alignPosition.Responsiveness = 200
+alignOr.Attachment0 = rightarm
+alignOr.Attachment1 = a1
+alignOr.Responsiveness = 200
+rightarm.Position = Vector3.new(-1.5, 0.8, 0.2)
+rightarm.Orientation = Vector3.new(240, -180, 180)
+local item = character["Left Arm"]
+item:BreakJoints()
+local alignOr = Instance.new("AlignOrientation", character["Head"])
+local alignPosition = Instance.new("AlignPosition", character["Head"])
+local leftarm = Instance.new("Attachment", item)
+local a1 = Instance.new("Attachment", character["Torso"])
+alignPosition.Attachment0 = leftarm
+alignPosition.Attachment1 = a1
+alignPosition.Responsiveness = 200
+alignOr.Attachment0 = leftarm
+alignOr.Attachment1 = a1
+alignOr.Responsiveness = 200
+leftarm.Position = Vector3.new(1.5, 1, 0.2)
+leftarm.Orientation = Vector3.new(240, 180, -180)
+coroutine.wrap(function()
+repeat
+leftarm.Position = Vector3.new(1.5, 0.5, 0.2)
+rightarm.Position = Vector3.new(-1.5, 0.5, 0.2)
+wait(0.1)
+leftarm.Position = leftarm.Position + Vector3.new(0, 0.5, 0)
+rightarm.Position = rightarm.Position + Vector3.new(0, 0.5, 0)
+wait(0.1)
+leftarm.Position = leftarm.Position + Vector3.new(0, 0.5, 0)
+rightarm.Position = rightarm.Position + Vector3.new(0, 0.5, 0)
+wait(0.1)
+leftarm.Position = leftarm.Position - Vector3.new(0, 0.5, 0)
+rightarm.Position = rightarm.Position - Vector3.new(0, 0.5, 0)
+wait(0.1)
+leftarm.Position = leftarm.Position - Vector3.new(0, 0.5, 0)
+rightarm.Position = rightarm.Position - Vector3.new(0, 0.5, 0)
+wait()
+until game.Players[plr.Name].Character.Humanoid.Health == 0 or game.Players[plr.Name] == nil or game.Players[plr.Name].Character == nil
+end)()
+end
+abuseplr()
+abuseanims()
+NoclipCurrent()
+end
+
+local function Control(Player)
+Player.Character.HumanoidRootPart.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
+end
+
+local function Uncontrol(Player)
+Player.Character.Humanoid.Health = 0
+game.Players.LocalPlayer.Character:Destroy()
+end
+
+local function Dildo(Player)
+local User = game:GetService("Players").LocalPlayer
+if not User.Character:FindFirstChild("Pal Hair") or not User.Character:FindFirstChild("Kate Hair") or not User.Character:FindFirstChild("Hat1") then
+return Send("fate's admin", "To use this you require Pal Hair, Woman Hair and Man Hair!", 7)
+end
+local function rightarm()
+local player = game:GetService("Players").LocalPlayer
+local character = player.Character
+local item = character["Right Arm"]
+item:BreakJoints()
+local alignOr = Instance.new("AlignOrientation", character["Head"])
+local alignPosition = Instance.new("AlignPosition", character["Head"])
+local a0 = Instance.new("Attachment", item)
+local a1 = Instance.new("Attachment", character["Torso"])
+alignPosition.Attachment0 = a0
+alignPosition.Attachment1 = a1
+alignPosition.Responsiveness = 200
+alignOr.Attachment0 = a0
+alignOr.Attachment1 = a1
+alignOr.Responsiveness = 200
+a0.Position = Vector3.new(-1.5, 1, 0.7)
+a0.Orientation = Vector3.new(-57.42, -180, -180)
+end
+local function handle()
+local player = game:GetService("Players").LocalPlayer
+local character = player.Character
+local item = character["Pal Hair"].Handle
+item["Mesh"]:Destroy()
+item:BreakJoints()
+local alignOr = Instance.new("AlignOrientation", character["Head"])
+local alignPosition = Instance.new("AlignPosition", character["Head"])
+a0 = Instance.new("Attachment", item)
+a1 = Instance.new("Attachment", character["Right Arm"])
+alignPosition.Attachment0 = a0
+alignPosition.Attachment1 = a1
+alignPosition.Responsiveness = 200
+alignOr.Attachment0 = a0
+alignOr.Attachment1 = a1
+alignOr.Responsiveness = 200
+a0.Position = Vector3.new(0, 1.4, 0)
+a0.Orientation = Vector3.new(0, -90, 0)
+end
+local function dildo1()
+local player = game:GetService("Players").LocalPlayer
+local character = player.Character
+local item = character["Kate Hair"].Handle
+item["Mesh"]:Destroy()
+item:BreakJoints()
+local alignOr = Instance.new("AlignOrientation", character["Head"])
+local alignPosition = Instance.new("AlignPosition", character["Head"])
+a0 = Instance.new("Attachment", item)
+a1 = Instance.new("Attachment", character["Right Arm"])
+alignPosition.Attachment0 = a0
+alignPosition.Attachment1 = a1
+alignPosition.Responsiveness = 200
+alignOr.Attachment0 = a0
+alignOr.Attachment1 = a1
+alignOr.Responsiveness = 200
+a0.Position = Vector3.new(0, 0, -2.7)
+a0.Orientation = Vector3.new(90, -180, 0)
+end
+local function dildo2()
+local player = game:GetService("Players").LocalPlayer
+local character = player.Character
+local item = character["Hat1"].Handle
+item["Mesh"]:Destroy()
+item:BreakJoints()
+local alignOr = Instance.new("AlignOrientation", character["Head"])
+local alignPosition = Instance.new("AlignPosition", character["Head"])
+a0 = Instance.new("Attachment", item)
+a1 = Instance.new("Attachment", character["Right Arm"])
+alignPosition.Attachment0 = a0
+alignPosition.Attachment1 = a1
+alignPosition.Responsiveness = 1000
+alignOr.Attachment0 = a0
+alignOr.Attachment1 = a1
+alignOr.Responsiveness = 1000
+a0.Position = Vector3.new(0, 0, -4.7)
+a0.Orientation = Vector3.new(90, -180, 0)
+end
+rightarm()
+handle()
+dildo1()
+dildo2()
+local uis = game:GetService("UserInputService")
+uis.InputBegan:connect(function(inp, GP)
+if GP then
+return
+end
+if inp.KeyCode == Enum.KeyCode.K then
+if IC(Player) then
+Player.Character.Humanoid.Health = 0
+wait(3)
+game.Players.LocalPlayer.Character:Destroy()
+end
+end
+end)
+while game:GetService("RunService").Heartbeat:wait() do
+Player.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(1.5, 5, -5)
+end
+end
+
+local function Grab(PlayerL)
+local target = PlayerL.Character.HumanoidRootPart
+local lp = game.Players.LocalPlayer.Character.HumanoidRootPart
+_G.ungrab = false
+if not game.Players.LocalPlayer.Character:FindFirstChild("YandereKnife") then
+return Send("fate's admin", "Sorry you need the Yandere Knife for this!", 7)
+end
+local function left()
+local player = game:GetService("Players").LocalPlayer
+local character = player.Character
+local item = character["Left Arm"]
+item:BreakJoints()
+local alignOr = Instance.new("AlignOrientation", character["Head"])
+local alignPosition = Instance.new("AlignPosition", character["Head"])
+local a0 = Instance.new("Attachment", item)
+local a1 = Instance.new("Attachment", character["Torso"])
+alignPosition.Attachment0 = a0
+alignPosition.Attachment1 = a1
+alignPosition.Responsiveness = 200
+alignOr.Attachment0 = a0
+alignOr.Attachment1 = a1
+alignOr.Responsiveness = 200
+a0.Position = Vector3.new(0, 1, 1.5)
+a0.Orientation = Vector3.new(-90, -20, -50)
+end
+local function right()
+local player = game:GetService("Players").LocalPlayer
+local character = player.Character
+local item = character["Right Arm"]
+item:BreakJoints()
+local alignOr = Instance.new("AlignOrientation", character["Head"])
+local alignPosition = Instance.new("AlignPosition", character["Head"])
+local a0 = Instance.new("Attachment", item)
+local a1 = Instance.new("Attachment", character["Torso"])
+alignPosition.Attachment0 = a0
+alignPosition.Attachment1 = a1
+alignPosition.Responsiveness = 200
+alignOr.Attachment0 = a0
+alignOr.Attachment1 = a1
+alignOr.Responsiveness = 200
+a0.Position = Vector3.new(-0.9, 1, -0.5)
+a0.Orientation = Vector3.new(-90, -20, -50)
+end
+local function knife()
+local player = game:GetService("Players").LocalPlayer
+local character = player.Character
+local item = character["YandereKnife"].Handle
+item:BreakJoints()
+local alignOr = Instance.new("AlignOrientation", character["Head"])
+local alignPosition = Instance.new("AlignPosition", character["Head"])
+a0 = Instance.new("Attachment", item)
+a1 = Instance.new("Attachment", character["Right Arm"])
+alignPosition.Attachment0 = a0
+alignPosition.Attachment1 = a1
+alignPosition.Responsiveness = 200
+alignOr.Attachment0 = a0
+alignOr.Attachment1 = a1
+alignOr.Responsiveness = 200
+a0.Position = Vector3.new(-0.8, 0, 1)
+a0.Orientation = Vector3.new(0, -90, -90)
+end
+for i = 1, 5 do
+knife()
+left()
+right()
+end
+noti("[ fate's admin ]", "Press k to kill, will reset you after.")
+local uis = game:GetService("UserInputService")
+uis.InputBegan:connect(function(inp, GP)
+if GP then
+return
+end
+if inp.KeyCode == Enum.KeyCode.K then
+if IC(PlayerL) then
+PlayerL.Character.Humanoid.Health = 0
+for i = 1, 5 do
+_G.ungrab = true
+end
+end
+end
+if _G.ungrab then
+local function larm()
+local player = game:GetService("Players").LocalPlayer
+local character = player.Character
+local item = character["Left Arm"]
+item:BreakJoints()
+local alignOr = Instance.new("AlignOrientation", character["Head"])
+local alignPosition = Instance.new("AlignPosition", character["Head"])
+local a0 = Instance.new("Attachment", item)
+local a1 = Instance.new("Attachment", character["Torso"])
+alignPosition.Attachment0 = a0
+alignPosition.Attachment1 = a1
+alignPosition.Responsiveness = 200
+alignOr.Attachment0 = a0
+alignOr.Attachment1 = a1
+alignOr.Responsiveness = 200
+a0.Position = Vector3.new(1.5, 0, 0)
+a0.Orientation = Vector3.new(0, 0, 0)
+end
+local function rarm()
+local player = game:GetService("Players").LocalPlayer
+local character = player.Character
+local item = character["Right Arm"]
+item:BreakJoints()
+local alignOr = Instance.new("AlignOrientation", character["Head"])
+local alignPosition = Instance.new("AlignPosition", character["Head"])
+local a0 = Instance.new("Attachment", item)
+local a1 = Instance.new("Attachment", character["Torso"])
+alignPosition.Attachment0 = a0
+alignPosition.Attachment1 = a1
+alignPosition.Responsiveness = 200
+alignOr.Attachment0 = a0
+alignOr.Attachment1 = a1
+alignOr.Responsiveness = 200
+a0.Position = Vector3.new(-1.5, 0, 0)
+a0.Orientation = Vector3.new(0, 0, 0)
+end
+for i = 1, 20 do
+larm()
+rarm()
+end
+_G.ungrab = false
+local function callback(text)
+if text == "Yes" then
+game.Players.LocalPlayer.Character:Destroy()
+elseif text == "No" then
+return
+end
+end
+local bindableFunction = Instance.new("BindableFunction")
+bindableFunction.OnInvoke = callback
+game.StarterGui:SetCore("SendNotification", {
+Title = "Killed!";
+Text = "Do you want to reset?";
+Duration = 10;
+Callback = bindableFunction;
+Button1 = "Yes";
+Button2 = "No";
+})
+end
+end)
+while game:GetService("RunService").Heartbeat:wait(0.000000e+9) do
+if _G.ungrab then
+return
+end
+target.CFrame = lp.CFrame * CFrame.new(-0.7, 0, -1.35)
+end
+end
+
+local function Lerp(Player)
+local Client = game:GetService("Players").LocalPlayer
+local TP = Player.Character.HumanoidRootPart
+local CP = Client.Character.HumanoidRootPart
+for lerp = 0, 1, .01 do
+TP.CFrame = TP.CFrame:lerp(CP.CFrame, lerp)
+wait()
+end
+end
+
+--[[
+Toggle
+]]
+
+InputService.InputBegan:Connect(function(Input, GameProcessedEvent)
+if Input.KeyCode == Enum.KeyCode.Semicolon and not GameProcessedEvent then
+CINput:CaptureFocus()
+wait()
+CINput.Text = ""
+end
+end)
+
+--[[
+Commands
+]]
+
+CreateCommandFunction("claim", function(Args)
+if not Args[1] then error("Invalid Amount Of Arguments") return end
+if Args[1] then
+
+local Player = GetPlayer(Args[1])
+
+
+
+local r, e = pcall(function()
+if Player == nil then return end
+ConsoleLog("Successfully executed claim on : " .. Player.Name, "Success")
+CL(Player)
+end)
+
+if not r then
+error('Invalid Player / Invalid Character')
+end
+end
+end,"Claim's A Player, ARGS: PA")
+
+CreateCommandFunction("bring", function(Args)
+if not Args[1] then error("Invalid Amount Of Arguments") return end
+if Args[1] then
+
+local Player = GetPlayer(Args[1])
+
+
+
+local r, e = pcall(function()
+if Player ~= nil and IC(Player) then
+if Player.Character then
+Player.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,5,0)
+end
+end
+end)
+
+if not r and _G.CL then
+error('Invalid Player / Invalid Character')
+end
+end
+end,"Bring's A Player, ARGS: PA")
+
+CreateCommandFunction("kill", function(Args)
+if not Args[1] then error("Invalid Amount Of Arguments") return end
+if Args[1] then
+
+local Player = GetPlayer(Args[1])
+
+
+
+local r, e = pcall(function()
+if Player ~= nil and IC(Player) then
+if Player.Character then
+Player.Character.Humanoid.Health = 0
+end
+end
+end)
+
+if not r and _G.CL then
+error('Invalid Player / Invalid Character')
+end
+end
+end,"Kill's A Player, ARGS: PA")
+
+CreateCommandFunction("jump", function(Args)
+if not Args[1] then error("Invalid Amount Of Arguments") return end
+if Args[1] then
+
+local Player = GetPlayer(Args[1])
+
+
+
+local r, e = pcall(function()
+if Player ~= nil and IC(Player) then
+if Player.Character then
+Player.Character.Humanoid.Jump = true
+end
+end
+end)
+
+if not r and _G.CL then
+error('Invalid Player / Invalid Character')
+end
+end
+end,"Jump's A Player, ARGS: PA")
+
+CreateCommandFunction("clicktarget", function(Args)
+if not Args[1] then error("Invalid Amount Of Arguments") return end
+if Args[1] then
+
+local Player = GetPlayer(Args[1])
+
+
+
+local r, e = pcall(function()
+if Player ~= nil and IC(Player) then
+if Player.Character then
+_G.Target = Player
+end
+end
+end)
+
+if not r and _G.CL then
+error('Invalid Player / Invalid Character')
+end
+end
+end,"Teleport's A Player to your mouse pos when q is pressed, ARGS: PA")
+
+CreateCommandFunction("rape", function(Args)
+if not Args[1] then error("Invalid Amount Of Arguments") return end
+if Args[1] then
+
+local Player = GetPlayer(Args[1])
+
+
+
+local r, e = pcall(function()
+if Player ~= nil and IC(Player) then
+if Player.Character then
+rape(Player)
+end
+end
+end)
+
+if not r and _G.CL then
+error('Invalid Player / Invalid Character')
+end
+end
+end,"Rape's a player!, ARGS: PA")
+
+CreateCommandFunction("unclicktarget", function(Args)
+if not Args[1] then error("Invalid Amount Of Arguments") return end
+if Args[1] then
+
+local Player = GetPlayer(Args[1])
+
+
+
+local r, e = pcall(function()
+if Player ~= nil and IC(Player) then
+if Player.Character then
+_G.Target = nil
+end
+end
+end)
+
+if not r and _G.CL then
+error('Invalid Player / Invalid Character')
+end
+end
+end,"Remove's the player from the keybind, ARGS: PA")
+
+CreateCommandFunction("loopbring", function(Args)
+if not Args[1] then error("Invalid Amount Of Arguments") return end
+if Args[1] then
+
+local Player = GetPlayer(Args[1])
+
+
+
+local r, e = pcall(function()
+if Player ~= nil and IC(Player) then
+if Player.Character then
+local IsLB = Instance.new("BoolValue")
+IsLB.Name = "LB"
+IsLB.Parent = Player.Character
+repeat wait()
+Player.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(5,0,0)
+until Player.Character.Humanoid.Health == 0 or  game.Players.LocalPlayer.Character.Humanoid.Health == 0 or not Player.Character or not game.Players.LocalPlayer.Character or not Player.Character:FindFirstChild("LB")
+end
+end
+end)
+
+if not r and _G.CL then
+error('Invalid Player / Invalid Character')
+end
+end
+end,"Loopbring's A Player, ARGS: PA")
+
+CreateCommandFunction("unloopbring", function(Args)
+if not Args[1] then error("Invalid Amount Of Arguments") return end
+if Args[1] then
+
+local Player = GetPlayer(Args[1])
+
+
+
+local r, e = pcall(function()
+if Player ~= nil and IC(Player) then
+if Player.Character then
+if Player.Character:FindFirstChild("LB") then
+Player.Character:FindFirstChild("LB"):Destroy()
+end
+end
+end
+end)
+
+if not r and _G.CL then
+error('Invalid Player / Invalid Character')
+end
+end
+end,"Stop's loopbringing A Player, ARGS: PA")
+
+CreateCommandFunction("ws", function(Args)
+if not Args[1] or not Args[2] then error("Invalid Amount Of Arguments") return end
+if Args[1] and Args[2] then
+
+local Player = GetPlayer(Args[1])
+local Speed = Args[2]
+
+
+
+local r, e = pcall(function()
+if Player ~= nil then
+if Player.Character then
+Player.Character:WaitForChild("Humanoid").WalkSpeed = Speed
+end
+end
+end)
+
+if not r and _G.CL then
+error('Invalid Player / Invalid Character / Invalid Argument')
+end
+end
+end,"Change's A Player's WalkSpeed, ARGS: PA NUM")
+
+CreateCommandFunction("tp", function(Args)
+if not Args[1] or not Args[2] then error("Invalid Amount Of Arguments") return end
+if Args[1] and Args[2] then
+
+local Player = GetPlayer(Args[1])
+local PlayerSecond = GetPlayer(Args[2])
+
+
+
+local r, e = pcall(function()
+if Player ~= nil and IC(Player) then
+if Player.Character then
+Player.Character.HumanoidRootPart.CFrame = PlayerSecond.Character.HumanoidRootPart.CFrame
+end
+end
+end)
+
+if not r and _G.CL then
+error('Invalid Player / Invalid Character / Invalid Argument')
+end
+end
+end,"Teleport a player to another player, ARGS: PA PA")
+
+CreateCommandFunction("jp", function(Args)
+if not Args[1] or not Args[2] then error("Invalid Amount Of Arguments") return end
+if Args[1] and Args[2] then
+
+local Player = GetPlayer(Args[1])
+local Power = Args[2]
+
+
+
+local r, e = pcall(function()
+if Player ~= nil then
+if Player.Character then
+Player.Character:WaitForChild("Humanoid").JumpPower = Power
+end
+end
+end)
+
+if not r and _G.CL then
+error('Invalid Player / Invalid Character / Invalid Argument')
+end
+end
+end,"Change's A Player's JumpPower, ARGS: PA NUM")
+
+CreateCommandFunction("dmode", function(Args)
+if not Args[1] then return end
+if Args[1] then
+
+local Player = GetPlayer(Args[1])
+
+local r, e = pcall(function()
+if Player ~= nil and IC(Player) then
+if Player.Character then
+Dildo(Player)
+end
+end
+end)
+
+if not r and _G.CL then
+error('Invalid Player / Invalid Character / Invalid Argument')
+end
+end
+end,"Use's dildo mode on a player, ARGS: PA")
+
+CreateCommandFunction("control", function(Args)
+if not Args[1] then return end
+if Args[1] then
+
+local Player = GetPlayer(Args[1])
+
+local r, e = pcall(function()
+if Player ~= nil and IC(Player) then
+if Player.Character then
+Control(Player)
+end
+end
+end)
+
+if not r and _G.CL then
+error('Invalid Player / Invalid Character / Invalid Argument')
+end
+end
+end,"Control's a player, ARGS: PA")
+
+CreateCommandFunction("uncontrol", function(Args)
+
+local r, e = pcall(function()
+Uncontrol(GetPlayer(Args[1]))
+end)
+
+if not r and _G.CL then
+error('Invalid Player / Invalid Character / Invalid Argument')
+end
+end,"Uncontrol's a player, ARGS: PA")
+
+CreateCommandFunction("goto", function(Args)
+if not Args[1] then return end
+if Args[1] then
+
+local Player = GetPlayer(Args[1])
+
+local r, e = pcall(function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Player.Character.HumanoidRootPart.CFrame
+end)
+
+if not r and _G.CL then
+error('Invalid Player / Invalid Character / Invalid Argument')
+end
+end
+end,"Use's dildo mode on a player, ARGS: PA")
+
+CreateCommandFunction("grab", function(Args)
+if not Args[1] then return end
+if Args[1] then
+
+local Player = GetPlayer(Args[1])
+
+local r, e = pcall(function()
+if Player ~= nil and IC(Player) then
+if Player.Character then
+Grab(Player)
+end
+end
+end)
+
+if not r and _G.CL then
+error('Invalid Player / Invalid Character / Invalid Argument')
+end
+end
+end,"Use's grabknife on a player, ARGS: PA")
+
+CreateCommandFunction("tween", function(Args)
+if not Args[1] then return end
+if Args[1] then
+
+local Player = GetPlayer(Args[1])
+
+local r, e = pcall(function()
+if Player ~= nil and IC(Player) then
+if Player.Character then
+Lerp(Player)
+end
+end
+end)
+
+if not r and _G.CL then
+error('Invalid Player / Invalid Character / Invalid Argument')
+end
+end
+end,"Tween's a player to you!, ARGS: PA")
+
+CreateCommandFunction("freeze", function(Args)
+if not Args[1] then return end
+if Args[1] then
+
+local Player = GetPlayer(Args[1])
+
+local r, e = pcall(function()
+if Player ~= nil and IC(Player) then
+if Player.Character then
+Player.Character.HumanoidRootPart.Anchored = true
+end
+end
+end)
+
+if not r and _G.CL then
+error('Invalid Player / Invalid Character / Invalid Argument')
+end
+end
+end,"Freeze's a player, ARGS: PA")
+
+CreateCommandFunction("unfreeze", function(Args)
+if not Args[1] then return end
+if Args[1] then
+
+local Player = GetPlayer(Args[1])
+
+local r, e = pcall(function()
+if Player ~= nil and IC(Player) then
+if Player.Character then
+Player.Character.HumanoidRootPart.Anchored = false
+end
+end
+end)
+
+if not r and _G.CL then
+error('Invalid Player / Invalid Character / Invalid Argument')
+end
+end
+end,"Unreeze's a player, ARGS: PA")
+
+CreateCommandFunction("view", function(Args)
+if not Args[1] then error("Invalid Amount Of Arguments") return end
+if Args[1] then
+
+local Player = GetPlayer(Args[1])
+
+
+
+local r, e = pcall(function()
+if Player ~= nil and IC(Player) then
+if Player.Character then
+workspace.Camera.CameraSubject = Player.Character
+end
+end
+end)
+
+if not r and _G.CL then
+error('Invalid Player / Invalid Character')
+end
+end
+end,"View's A Player, ARGS: PA")
+
+CreateCommandFunction("unview", function(Args)
+workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character
+end,"Unview's a Player, ARGS: N/A")
+
+CreateCommandFunction("rejoin", function(Args)
+game:GetService("TeleportService"):Teleport(game.PlaceId)
+end,"Rejoin's the server, ARGS: N/A")
+
+CreateCommandFunction("clear", function(Args)
+ClearConsole()
+end,"Clear's the console, ARGS: N/A")
+
+CreateCommandFunction("MT", function(Args)
+if _G.CL then
+_G.CL = false
+ConsoleLog("Console Message's have been disabled!", "Error")
+else
+if _G.CL == false then
+_G.CL = true
+ConsoleLog("Console Message's have been enabled!", "Success")
+end
+end
+end,"Toggle's Console Messages, ARGS: N/A")
+
+CreateCommandFunction("Cmds", function(Args)
+for i = 1,#Commands do
+if Commands[i].Descr == nil then Commands[i].Descr = "[ NONE ]" end
+local String = Commands[i].Name .. " ~ " .. Commands[i].Descr
+ConsoleLog(String, "Success")
+end
+end)
+
+CreateCommandFunction("Commands", function(Args)
+for i = 1,#Commands do
+if Commands[i].Descr == nil then return end
+local String = Commands[i].Name .. " ~ " .. Commands[i].Descr
+ConsoleLog(String, "Success")
+end
+end)
+
+--[[
+CLICK TP PLAYER
+]]
+
+game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(Key)
+if Key == "q" and _G.Target ~= nil then
+if not IC(_G.Target) then return end
+_G.Target.Character.HumanoidRootPart.CFrame = CFrame.new(game.Players.LocalPlayer:GetMouse().Hit.p)
+end
+end)
+
+--[[
+VARS
+]]
+
+if _G.CL == nil then
+_G.CL = true
+end
+
+CINput.FocusLost:Connect(function(Processed)
+if not Processed then
+CINput.Text = ""
+end
+
+if Processed then
+
+local ISCMD = false
+local STRINGED = false
+local CMDNA = string.split(CINput.Text, " ")
+local CNAME = CMDNA[1] .. " "
+local Args = table.remove(CMDNA, 1)
+
+for i = 1,#Commands do
+if Commands[i].Name:lower() == CNAME:lower() then
+ISCMD = true
+
+if Commands[i].Name:lower() == CNAME:lower() then
+if Commands[i].String == true then
+STRINGED = true
+end
+end
+
+local Found = FindCommandFunc(CNAME)
+
+if Found then
+
+
+local Did, Not = pcall(Found, CMDNA)
+
+
+if not Did and _G.CL then
+if string.find(Not, "Character") then
+ConsoleLog("Invalid Player / or Invalid Character Recieved.", "Error")
+else
+if string.find(Not, "Arguments") then
+ConsoleLog("Invalid Arguments;", "Error")
+else
+ConsoleLog(ErrorType.CommandErrorRet, "Error")
+setclipboard(Not)
+end
+end
+end
+
+
+
+if Did and _G.CL then
+if CNAME == "clear " or CNAME == "remove" or CNAME == "Cmds " or CNAME == "Commands " or CNAME == "cmds " or CNAME == "commands " or CNAME === "help " then CINput.Text = "" return end
+ConsoleLog("Successfully executed " .. CNAME:lower(), "Success")
+end
+end
+end
+end
+
+
+if not ISCMD then
+if CINput.Text == "" then return end
+ConsoleLog(ErrorType.UnknownCommand, "Error")
+end
+
+CINput.Text = ""
+end
+end)
+end
+coroutine.wrap(ITLEDNX_fake_script)()
